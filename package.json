@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "description": "Keep server code out of client bundles",
   "keywords": [
-    "rsc",
     "react",
-    "server",
     "nextjs",
-    "client-only",
-    "server-only"
+    "server-only",
+    "server-components"
   ],
   "homepage": "https://github.com/nasserkari/server-boundary#readme",
   "bugs": {
@@ -21,8 +19,16 @@
   "license": "MIT",
   "author": "Nasser Karinganire",
   "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "main": "./src/index.js",
+  "exports": {
+    ".": {
+      "react-server": "./src/error.js",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/index.js",
+    "src/error.js"
+  ]
 }
